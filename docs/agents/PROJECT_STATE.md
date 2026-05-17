@@ -21,5 +21,6 @@
 
 ## Recent Handoff
 
+- 2026-05-17 Codex：已将 `/Library/Developer/AIs-test` 初始化为 git 仓库并同步到 `LeonZhua/AIs.git` 的 `main` 分支；本地远端使用 SSH `git@github.com:LeonZhua/AIs.git`。
 - 2026-05-16 Codex：从 `/Library/Developer/Cursor_Kit` 同步 v2.2.0 到 `/Library/Developer/AIs-test`，排除 `.git`、本地设置和缓存文件。
 - 2026-05-16 Codex：AIs-test 当前不是 git 仓库；如需要版本管理，后续可在本目录单独 `git init`。

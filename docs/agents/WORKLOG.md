@@ -25,6 +25,7 @@
 - 用户决策：确认人工门禁处理方式，敏感输入禁止外发；任务仅在人工声明后拆分；Qwen/DeepSeek 不可用时等待；解析失败不合成可执行计划；其余采用默认处理。
 - 实现：扩展 `tools/agent_context.py`，新增 `multi-review api-plan` 与 `multi-review api-accept`；实现 seed package、输入脱敏、人工拆分声明、dry-run、双重开关、Qwen/DeepSeek API 调用、Codex 裁决、calls log、artifact chain 和多 AI 验收报告。
 - 验证：`python3 tools/agent_context.py multi-review api-plan --task 2026-05-16-2201-直接调用-API-接口的多-AI-评审方案` 输出 dry-run artifact；`python3 tools/agent_context.py validate` 通过；`python3 -m unittest tests/test_agent_context.py` 通过 19 项测试。未发起真实外部 API 调用。
+- 同步：初始化本地 git 仓库，提交并通过 SSH 推送到 `git@github.com:LeonZhua/AIs.git` 的 `main` 分支；`.env.local` 被 `.gitignore` 排除，敏感模式扫描结果为 clean。
 - 验证：执行了 `python3 tools/agent_context.py multi-review plan-prompts --task 2026-05-16-2201-直接调用-API-接口的多-AI-评审方案 --models codex,deepseek,qwen` 和 `python3 tools/agent_context.py multi-review review-prompts --task 2026-05-16-2201-直接调用-API-接口的多-AI-评审方案`，结果为生成 plan/review prompts；未运行测试，因用户明确要求不要执行。
 - 下一步：如进入实现阶段，按 `final-plan.md` 实现 API-runner 最小闭环；prompt-only review 保留为 fallback。
 
