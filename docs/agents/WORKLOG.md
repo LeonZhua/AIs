@@ -26,6 +26,9 @@
 - 实现：扩展 `tools/agent_context.py`，新增 `multi-review api-plan` 与 `multi-review api-accept`；实现 seed package、输入脱敏、人工拆分声明、dry-run、双重开关、Qwen/DeepSeek API 调用、Codex 裁决、calls log、artifact chain 和多 AI 验收报告。
 - 验证：`python3 tools/agent_context.py multi-review api-plan --task 2026-05-16-2201-直接调用-API-接口的多-AI-评审方案` 输出 dry-run artifact；`python3 tools/agent_context.py validate` 通过；`python3 -m unittest tests/test_agent_context.py` 通过 19 项测试。未发起真实外部 API 调用。
 - 同步：初始化本地 git 仓库，提交并通过 SSH 推送到 `git@github.com:LeonZhua/AIs.git` 的 `main` 分支；`.env.local` 被 `.gitignore` 排除，敏感模式扫描结果为 clean。
+- 文档：补充 README 的多 AI 评审使用说明，覆盖 prompt-only、API-runner、dry-run/execute、任务拆分、多 AI 验收和安全约定。
+- 文档：补充 README Mermaid 流程图，说明 API-runner 总体运行机制、双重开关机制和 artifact 流转机制。
+- 文档修正：将 README 的多 AI 评审说明从用户手动 CLI 操作改为 Codex 协作视角，强调用户通过对话授权/确认，Codex 内部调用工具并维护 artifact；保留 CLI 作为维护者/内部工具说明。
 - 验证：执行了 `python3 tools/agent_context.py multi-review plan-prompts --task 2026-05-16-2201-直接调用-API-接口的多-AI-评审方案 --models codex,deepseek,qwen` 和 `python3 tools/agent_context.py multi-review review-prompts --task 2026-05-16-2201-直接调用-API-接口的多-AI-评审方案`，结果为生成 plan/review prompts；未运行测试，因用户明确要求不要执行。
 - 下一步：如进入实现阶段，按 `final-plan.md` 实现 API-runner 最小闭环；prompt-only review 保留为 fallback。
 
