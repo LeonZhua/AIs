@@ -1,0 +1,7 @@
+{
+  "trace_id": "20260517-223715",
+  "status": "not_requested",
+  "requires_human_confirmation": false,
+  "reason": "未收到人工拆分声明，按用户决策不自动拆分任务。",
+  "subtasks": []
+}

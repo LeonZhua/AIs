@@ -1,0 +1,6 @@
+{
+  "trace_id": "20260517-223715",
+  "status": "dry_run",
+  "external_calls": [],
+  "next": "set MULTI_REVIEW_API_CALLS=enabled and pass --execute to call Qwen/DeepSeek"
+}

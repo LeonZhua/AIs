@@ -1,0 +1,23 @@
+{
+  "task_id": "2026-05-16-2201-直接调用-API-接口的多-AI-评审方案",
+  "trace_id": "20260517-223715",
+  "goal": "通过多 AI 评审确保多 AI 执行方案可行；任务过大时合理拆分；实现后由多 AI 验收。",
+  "non_goals": [
+    "不自动执行代码修改",
+    "不自动创建 PR",
+    "不自动外部分派"
+  ],
+  "constraints": {
+    "api_calls": "默认 dry-run；真实调用需要 MULTI_REVIEW_API_CALLS=enabled 与 --execute",
+    "secrets": "密钥只来自本地环境变量；不得写入 artifact、日志、命令行参数或对话",
+    "cost": "记录 token/cost，不设置硬上限，不因预算阈值阻断调用",
+    "decomposition": "只有人工声明后才拆分任务"
+  },
+  "model_roles": {
+    "qwen": "结构化方案、流程工程化、schema/artifact 一致性",
+    "deepseek": "反方风险、安全边界、失败路径、过度设计",
+    "codex": "本地 seed、脱敏、拆分、裁决、验收汇总"
+  },
+  "split_requested": false,
+  "source_hash": "b07cd4b014d4f617186768f75965e15676fddf2cb52baeb50acab08407d42629"
+}

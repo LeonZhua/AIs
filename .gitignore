@@ -1,0 +1,20 @@
+# 本地密钥与覆盖配置（勿提交）
+.env
+.env.local
+*.local
+
+# Agent / IDE 本地配置
+.claude/settings.local.json
+.trae/user_rules.md
+.trae/*.local.md
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# 系统与 IDE
+.DS_Store

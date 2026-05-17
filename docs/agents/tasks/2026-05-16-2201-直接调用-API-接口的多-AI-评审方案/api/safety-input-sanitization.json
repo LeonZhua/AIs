@@ -1,0 +1,7 @@
+{
+  "trace_id": "20260517-223715",
+  "status": "pass",
+  "policy": "命中敏感信息则禁止外发",
+  "hits_count": 0,
+  "hit_patterns": []
+}
